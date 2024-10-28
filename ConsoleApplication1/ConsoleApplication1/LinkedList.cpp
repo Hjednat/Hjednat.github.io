@@ -45,6 +45,14 @@ void LinkedList::append(int value)
     }
 }
 
+void LinkedList::prepend(int value)
+{
+    Node* newNode = new Node();
+    newNode->data = value;
+    newNode->next = head;
+    head = newNode;
+}
+
 void LinkedList::clearList() {
     Node* current = head;
     while (current != nullptr) {
@@ -54,6 +62,20 @@ void LinkedList::clearList() {
     }
     head = nullptr;
 }
+
+void LinkedList::pop() {
+    Node* current = head;
+    Node* previous = nullptr;
+    while (current->next != nullptr)
+    {
+        previous = current;
+        current = current->next;
+    }
+    delete current;
+    tail = previous;
+    displayList();
+}
+
 
 
 

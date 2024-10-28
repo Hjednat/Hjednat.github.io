@@ -4,6 +4,7 @@
 class LinkedList
 {
 	Node* head;
+    Node* tail;
 
 public:
     // Function to display the linked list

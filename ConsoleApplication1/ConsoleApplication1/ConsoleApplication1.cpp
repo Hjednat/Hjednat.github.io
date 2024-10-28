@@ -8,10 +8,12 @@ int main() {
     list->append(10);
     list->append(30);
     list->append(40);
+    list->prepend(0);
 
     list->displayList();
+    list->pop();
 
-    delete list;
+    //delete list;
 
     return 0;
 }
