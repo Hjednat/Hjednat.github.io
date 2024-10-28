@@ -45,12 +45,19 @@ void LinkedList::append(int value)
     }
 }
 
+void LinkedList::clearList() {
+    Node* current = head;
+    while (current != nullptr) {
+        Node* nextNode = current->next;
+        delete current;
+        current = nextNode;
+    }
+    head = nullptr;
+}
+
+
+
 LinkedList::~LinkedList()
 {
-    // Function to display the linked list
-    Node* current = head;
-
-    while (current != nullptr) {
-        // TODO: Call delete on each node.
-    }
+    clearList();
 }
